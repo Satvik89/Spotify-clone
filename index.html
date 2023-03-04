@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="R.png">
+    <title>Spotify</title>
+    <link href="index.css" rel="stylesheet" type="text/css">
+
+    <script src="index.js" defer></script>
+
+
+</head>
+
+<body onload="onPageLoad()">
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+
+    <div class="container">
+
+        <nav>
+
+            <ul>
+
+                <li><img src="R.png" id="logo"></li>
+                <label>Spotify Music Player</label>
+                <li id="list">Home</li>
+                <li id="list">About</li>
+                <li id="list">Playlist</li>
+                <div class="search">
+                    <input type="text" id="input">
+                    <button id="search"><img src="search.png" class="icon"></button>
+                </div>
+            </ul>
+        </nav>
+    </div>
+    <div class="ID">
+        <div class="clientId">
+            <label for="clientId" class="form-label">Client ID</label>
+            <input type="text" id="clientId">
+        </div>
+        <div class="secretId">
+            <label for="secretId" class="form-label">Secret ID</label>
+            <input type="text" id="secretId">
+        </div>
+        <div class="auth">
+            <button id="auth" onclick="requestAuthorization()">Authorise</button>
+        </div>
+
+
+
+
+    </div>
+
+    </div>
+    <div class="foo">
+        <div id="lists"></div>
+    </div>
+
+    <div class="image">
+        <img src="" id="song-image">
+    </div>
+    <div id="buttons">
+        <button id="upcoming">UP NEXT</button>
+        <button id="lyrics">LYRICS</button>
+
+    </div>
+
+    <div class="audio-container">
+
+        <div class="audio-controls">
+            <button class="btn-prev"><img src="prev.png" class="prev"></button>
+            <button class="btn-play"><img src="play.png" class="play"></button>
+            <button class="btn-next"><img src="next.png" class="next"></button>
+        </div>
+
+        <div class="audio-progress">
+            <div class="audio-progress-bar"></div>
+        </div>
+
+        <div class="audio-track-info">
+            <div class="audio-track-name">Song Name</div>
+            <div class="audio-artist-name">Artist Name</div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
