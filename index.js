@@ -20,6 +20,9 @@ const button = document.querySelector(".btn-play");
 var play = document.querySelector(".play");
 var button_state = "play";
 const bu = document.querySelectorAll(".bu");
+const song_name = document.querySelector(".audio-track-name");
+const artist_name = document.querySelector(".audio-artist-name");
+
 
 
 
@@ -127,6 +130,8 @@ function handleAuthorizationResponse() {
 
 window.onSpotifyWebPlaybackSDKReady = () => {
     const token = localStorage.getItem("access_token");
+
+
     console.log(token);
     let player = new Spotify.Player({
         name: 'Echo',
@@ -165,6 +170,12 @@ window.onSpotifyWebPlaybackSDKReady = () => {
     }) => {
         console.log(`Ready with device id ${device_id}`);
 
+
+
+
+
+        const uri = localStorage.getItem(`spotify_uri`);
+
         const play = ({
             spotify_uri,
             playerInstance: {
@@ -182,25 +193,46 @@ window.onSpotifyWebPlaybackSDKReady = () => {
                 });
             });
         };
+
+
+
         play({
             playerInstance: player,
 
-            spotify_uri: 'spotify:track:7xGfFoTpQ2E7fRF5lN10tr',
+            spotify_uri: uri,
         });
-
-
-    });
-
-
-
-
+    })
 
 };
 
 
 
 
+function music(song_uri, name, artist) {
+    console.log(song_uri);
+    localStorage.setItem("spotify_uri", song_uri);
+    const token = localStorage.getItem("access_token");
 
+    fetch("https://api.spotify.com/v1/me/player/play", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+                uris: [song_uri],
+            }),
+        })
+        .then((response) => {
+            console.log("Music started playing");
+        })
+        .catch((error) => {
+            console.error("Error starting music playback:", error);
+        });
+    song_name.innerHTML = name;
+    artist_name.innerHTML = artist;
+
+}
 
 
 
@@ -231,7 +263,8 @@ function fetchfunction() {
                 source[i] = response.tracks.items[i].data.albumOfTrack.coverArt.sources[0].url;
                 new_name[i] = response.tracks.items[i].data.name;
                 new_artist[i] = response.tracks.items[i].data.artists.items[0].profile.name;
-                songs[i] = response.tracks.items[i].data.albumOfTrack.sharingInfo.shareUrl;
+                songs[i] = response.tracks.items[i].data.uri;
+                // songs[i] = response.tracks.items[i].data.albumOfTrack.sharingInfo.shareUrl;
 
 
 
@@ -239,7 +272,7 @@ function fetchfunction() {
 
 
                       <div class="new_div_content-${i}">
-                      <button class="bu-${i}">
+                      <button class="bu-${i}" onclick="music('${songs[i]}','${new_name}','${new_artist}')">
                       <audio src="${songs[i]}" type= "audio/mpeg" id="audio-${i}"></audio>
                           <div class="new_div_content_inner">
                           <img src = "${source[i]}" id="images-${i}">
@@ -258,7 +291,12 @@ function fetchfunction() {
 
             }
 
+
             list.innerHTML = listItems;
+            const a = document.querySelector(".bu-1");
+            a.addEventListener("click", () => {
+                console.log("superman");
+            })
             for (i = 0; i < response.tracks.items.length; i++) {
                 const imgs = document.querySelector(`#images-${i}`);
                 const name = document.querySelector(`#new_name-${i}`);
@@ -273,6 +311,7 @@ function fetchfunction() {
                 new_div.style.width = "100%";
                 new_div.style.backgroundColor = "#282828";
                 new_div.style.border = "none";
+                new_div.style.justifyContent = "space-around";
 
                 const item = document.querySelector(`#item-${i}`);
                 item.style.fontSize = "0.5vw";
@@ -289,10 +328,10 @@ function fetchfunction() {
                 item.style.paddingLeft = "0.7vw";
 
 
-                new_div.addEventListener("click", () => {
-                    let audio = new Audio(`${songs[i]}`);
-                    audio.play();
-                })
+                // new_div.addEventListener("click", () => {
+                //     let audio = new Audio(`${songs[i]}`);
+                //     audio.play();
+                // })
 
 
             }
