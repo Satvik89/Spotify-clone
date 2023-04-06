@@ -1,324 +1,316 @@
-#logo {
-    height: 2.5vw;
-    width: 2.5vw;
-    margin: 1vw;
-}
-
-button {
-    color: white;
-}
-
-.container {
-    height: 4.5vw;
-    width: 100%;
-    background-color: black;
-    color: white;
-    position: absolute;
+    #logo {
+        height: 2.5vw;
+        width: 2.5vw;
+        margin: 1vw;
+    }
+    
+    button {
+        color: white;
+    }
+    
+    .container {
+        height: 4.5vw;
+        width: 100%;
+        background-color: black;
+        color: white;
+        /* position: fixed;
     top: 0;
     left: 0;
     right: 0;
-}
-
-nav ul {
-    display: flex;
-    list-style-type: none;
-    height: 100vw;
-    font-size: 1.4vw;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-#list {
-    /* margin-right: 1.4vw; */
-    margin-top: 1.8vw;
-    font-size: 0.88vw;
-    list-style-type: none;
-    display: none;
-    margin-left: 1vw;
-}
-
-#clientId {
-    background-color: white;
-    width: 16vw;
-    border: 0.4vw;
-    border-radius: 1vw;
-    height: 2vh;
-    margin-left: 1vw;
-    padding: 0.4vw;
-    font-size: 1vw;
-    display: inline-block;
-}
-
-#secretId {
-    background-color: white;
-    width: 16vw;
-    border: 0.4vw;
-    border-radius: 1vw;
-    height: 2vh;
-    margin-left: 1vw;
-    padding: 0.4vw;
-    font-size: 1vw;
-    display: inline-block;
-    margin-top: 3vh;
-}
-
-.clientId {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#auth {
-    background-color: #1DB954;
-    color: #1e1616;
-    width: 7vw;
-    font-size: 1vw;
-    height: 2.4vh;
-    margin-top: 30vw;
-    margin-left: -16vw;
-    position: relative;
-}
-
-.secretId {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.form-label {
-    font-size: 1.4vw;
-    padding: 0.4vw;
-    display: inline-block;
-}
-
-.search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    display: inline-block;
-    margin-top: 1.8vw;
-    margin-left: 35vw;
-    display: none;
-}
-
-#input {
-    border: 7px solid #d3d3d3;
-    border-radius: 2vw;
-    padding: 0.1vw, 0. 1vw;
-    font-size: 1.4vw;
-    width: 30vw;
-    height: 1.7vw;
-    /* margin-right: 1vw; */
-    background-color: rgb(20, 13, 13);
-    color: white;
-}
-
-#search {
-    background-color: #1e1616;
-    border: 1px solid #d3d3d3;
-    border-radius: 0 1.2vw 1.2vw 0;
-    color: #fff;
-    padding: 0.7vw 1vw;
-    font-size: 1.4vw;
-    cursor: pointer;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 2vw;
-    width: 4vw;
-}
-
-.auth {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2vh;
-}
-
-.icon {
-    height: 1vw;
-    width: 1vw;
-    margin-bottom: 1.4vw;
-}
-
-label {
-    margin-top: 1.2vw;
-    color: white;
-}
-
-.audio-container {
-    background-color: black;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1.4vw;
-    height: 4vw;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: none;
-}
-
-
-/* Styling the audio player controls */
-
-.audio-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1vw;
-}
-
-
-/* Styling the audio player progress bar */
-
-.audio-progress {
-    width: 100%;
-    height: 1.1vw;
-    background-color: #535353;
-    margin-bottom: 0.7vw;
-}
-
-.audio-progress-bar {
-    height: 100%;
-    background-color: #1DB954;
-}
-
-
-/* Styling the audio player track information */
-
-.audio-track-info {
-    margin-top: 0.4vw;
-    text-align: center;
-}
-
-.audio-track-name {
-    font-weight: bold;
-    font-size: 1vw;
-}
-
-.audio-artist-name {
-    font-size: 0.7vw;
-}
-
-.btn-prev {
-    margin-right: 1.2vw;
-    border-radius: 1.4vw;
-    height: 2.5vw;
-    width: 2.5vw;
-}
-
-.btn-play {
-    margin-right: 1.2vw;
-    border-radius: 2vw;
-    overflow: hidden;
-}
-
-
-/*     
+    bottom: 4.5vw;*/
+    }
+    
+    nav ul {
+        display: flex;
+        list-style-type: none;
+        height: 100vw;
+        font-size: 1.4vw;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #list {
+        /* margin-right: 1.4vw; */
+        margin-top: 1.8vw;
+        font-size: 0.88vw;
+        list-style-type: none;
+        display: none;
+        margin-left: 1vw;
+    }
+    
+    #clientId {
+        background-color: white;
+        width: 16vw;
+        border: 0.4vw;
+        border-radius: 1vw;
+        height: 2vh;
+        margin-left: 1vw;
+        padding: 0.4vw;
+        font-size: 1vw;
+        display: inline-block;
+    }
+    
+    #secretId {
+        background-color: white;
+        width: 16vw;
+        border: 0.4vw;
+        border-radius: 1vw;
+        height: 2vh;
+        margin-left: 1vw;
+        padding: 0.4vw;
+        font-size: 1vw;
+        display: inline-block;
+        margin-top: 3vh;
+    }
+    
+    .clientId {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    #auth {
+        background-color: #1DB954;
+        color: #1e1616;
+        width: 7vw;
+        font-size: 1vw;
+        height: 2.4vh;
+        margin-top: 25%;
+        margin-left: -16%;
+        position: relative;
+    }
+    
+    .secretId {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .form-label {
+        font-size: 1.4vw;
+        padding: 0.4vw;
+        display: inline-block;
+    }
+    
+    .search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        display: inline-block;
+        margin-top: 1.8vw;
+        margin-left: 35vw;
+        display: none;
+    }
+    
+    #input {
+        border: 1px solid #d3d3d3;
+        border-radius: 2vw;
+        padding: 0.1vw, 0. 1vw;
+        font-size: 1.4vw;
+        width: 30vw;
+        height: 1.7vw;
+        /* margin-right: 1vw; */
+        background-color: rgb(20, 13, 13);
+        color: white;
+    }
+    
+    #search {
+        background-color: #1e1616;
+        border: 1px solid #d3d3d3;
+        border-radius: 0 1.2vw 1.2vw 0;
+        color: #fff;
+        padding: 0.7vw 1vw;
+        font-size: 1.4vw;
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 2vw;
+        width: 4vw;
+    }
+    
+    .auth {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2vh;
+    }
+    
+    .icon {
+        height: 1vw;
+        width: 1vw;
+        margin-bottom: 1.4vw;
+    }
+    
+    label {
+        margin-top: 1.2vw;
+        color: white;
+    }
+    
+    .audio-container {
+        background-color: black;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.4vw;
+        height: 4vw;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: none;
+    }
+    /* Styling the audio player controls */
+    
+    .audio-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.1vw;
+    }
+    /* Styling the audio player progress bar */
+    
+    .audio-progress {
+        width: 100%;
+        height: 1.1vw;
+        background-color: #535353;
+        margin-bottom: 0.7vw;
+        display: none;
+    }
+    
+    .audio-progress-bar {
+        height: 100%;
+        background-color: #1DB954;
+    }
+    /* Styling the audio player track information */
+    
+    .audio-track-info {
+        /* margin-top: 0.4vw; */
+        text-align: center;
+    }
+    
+    .audio-track-name {
+        font-weight: bold;
+        font-size: 1vw;
+    }
+    
+    .audio-artist-name {
+        font-size: 0.7vw;
+    }
+    
+    .btn-prev {
+        margin-right: 1.2vw;
+        border-radius: 1.4vw;
+        height: 2.5vw;
+        width: 2.5vw;
+    }
+    
+    .btn-play {
+        margin-right: 1.2vw;
+        border-radius: 2vw;
+        overflow: hidden;
+    }
+    /*     
     li {
         margin-bottom: 30px;
     }
      */
-
-.btn-next {
-    height: 2.5vw;
-    width: 2.5vw;
-    border-radius: 1.4vw;
-}
-
-.next {
-    height: 2vw;
-    width: 2vw;
-}
-
-.play {
-    height: 2vw;
-    width: 2vw;
-}
-
-.prev {
-    height: 2vw;
-    width: 2vw;
-}
-
-body {
-    background-color: #282828;
-    /* background-color: black; */
-    font-size: small;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    height: auto;
-}
-
-.image {
-    height: 25vw;
-    width: 25vw;
-    top: 25vw;
-    left: 20vw;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    display: none;
-}
-
-#buttons {
-    text-align: right;
-    margin-right: 20vw;
-    margin-top: 5vw;
-    /* display: none; */
-}
-
-#upcoming,
-#lyrics {
-    height: 5vw;
-    width: 5vw;
-    color: white;
-    background-color: #282828;
-    /* background-color: black; */
-    border: none;
-    font-size: 1vw;
-    display: none;
-}
-
-#upcoming:active,
-#lyrics:active {
-    box-shadow: 0vw 0vw 2vw 1vw rgba(255, 255, 255, 0.5);
-    height: 3vw;
-    width: 3vw;
-    color: white;
-    background-color: #282828;
-    /* background-color: black; */
-    border: none;
-    font-size: larger;
-}
-
-#audio-track-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 4vw;
-    /* margin-bottom: 1vw; */
-}
-
-
-/* button:active {
+    
+    .btn-next {
+        height: 2.5vw;
+        width: 2.5vw;
+        border-radius: 1.4vw;
+    }
+    
+    .next {
+        height: 2vw;
+        width: 2vw;
+    }
+    
+    .play {
+        height: 2vw;
+        width: 2vw;
+    }
+    
+    .prev {
+        height: 2vw;
+        width: 2vw;
+    }
+    
+    body {
+        background-color: #282828;
+        /* background-color: black; */
+        font-size: small;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        height: auto;
+    }
+    
+    .image {
+        height: 25vw;
+        width: 25vw;
+        top: 25vw;
+        left: 20vw;
+        position: fixed;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        display: none;
+    }
+    
+    #buttons {
+        text-align: right;
+        margin-right: 20vw;
+        margin-top: 5vw;
+        /* display: none; */
+    }
+    
+    #upcoming,
+    #lyrics {
+        height: 5vw;
+        width: 5vw;
+        color: white;
+        background-color: #282828;
+        /* background-color: black; */
+        border: none;
+        font-size: 1vw;
+        display: none;
+    }
+    
+    #upcoming:active,
+    #lyrics:active {
+        box-shadow: 0vw 0vw 2vw 1vw rgba(255, 255, 255, 0.5);
+        height: 3vw;
+        width: 3vw;
+        color: white;
+        background-color: #282828;
+        /* background-color: black; */
+        border: none;
+        font-size: larger;
+    }
+    
+    #audio-track-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4vw;
+        /* margin-bottom: 1vw; */
+    }
+    /* button:active {
         box-shadow: 0vw 0vw 7vw 3.5vw rgba(255, 255, 255, 0.5);
         height: 51px;
     width: 182px; 
@@ -334,30 +326,30 @@ body {
     align-items: center;
     padding: 1.4vw;
 } */
-
-.new_div_content_inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.foo {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#lists {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    background-color: #282828;
-    margin: 4vw;
-}
-
-#item {
-    display: flex;
-    flex-direction: row;
-    font-size: 2.1vw;
-}
+    
+    .new_div_content_inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .foo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #lists {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        background-color: #282828;
+        margin: 4vw;
+    }
+    
+    #item {
+        display: flex;
+        flex-direction: row;
+        font-size: 2.1vw;
+    }
