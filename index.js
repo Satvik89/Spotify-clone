@@ -1,6 +1,6 @@
 //Client ID def5ff19fdbc46ab85b683aefc110180
 //Client Secret 88a78da6906347c1984911fb38fe4959
-var redirect_uri = "http://127.0.0.1:5500/index.html";
+var redirect_uri = "https://spotify-clone-ochre-two.vercel.app/";
 var client_id = "def5ff19fdbc46ab85b683aefc110180";
 var client_secret = "88a78da6906347c1984911fb38fe4959";
 var access_token = null;
