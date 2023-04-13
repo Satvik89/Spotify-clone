@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="R.png">
-    <title>Spotify</title>
+    <title>Echo</title>
     <link href="index.css" rel="stylesheet" type="text/css">
 
     <script src="index.js" defer></script>
@@ -24,7 +24,7 @@
             <ul>
 
                 <li><img src="R.png" id="logo"></li>
-                <label>Spotify Music Player</label>
+                <label>Echo Music</label>
                 <li id="list">Home</li>
                 <li id="list">About</li>
                 <li id="list">Playlist</li>
@@ -43,17 +43,15 @@
         <div class="secretId">
             <label for="secretId" class="form-label">Secret ID</label>
             <input type="text" id="secretId">
+
+            <div class="auth">
+                <button id="auth" onclick="requestAuthorization()">Authorise</button>
+            </div>
+
         </div>
-        <div class="auth">
-            <button id="auth" onclick="requestAuthorization()">Authorise</button>
-        </div>
-
-
-
-
     </div>
 
-    </div>
+
     <div class="foo">
         <div id="lists"></div>
     </div>

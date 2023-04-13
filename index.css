@@ -30,6 +30,7 @@
     * {
         margin: 0;
         padding: 0;
+        /* outline: 0.1vw solid white; */
     }
     
     #list {
@@ -74,6 +75,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        /* height: 2vh; */
     }
     
     #auth {
@@ -82,25 +84,29 @@
         width: 7vw;
         font-size: 1vw;
         height: 2.4vh;
-        margin-top: 25%;
-        margin-left: -16%;
-        position: relative;
+        /* margin-top: 25%;
+        margin-left: -16%; */
     }
     
     .secretId {
-        display: flex;
+        /* display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: center; */
         position: absolute;
         top: 55%;
         left: 50%;
         transform: translate(-50%, -50%);
+        height: 2vw;
     }
     
     .form-label {
         font-size: 1.4vw;
-        padding: 0.4vw;
+        padding: 0.7vw;
         display: inline-block;
+    }
+    
+    .clientId .form-label {
+        margin-bottom: 1vw;
     }
     
     .search {
@@ -139,13 +145,6 @@
         top: 0;
         height: 2vw;
         width: 4vw;
-    }
-    
-    .auth {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 2vh;
     }
     
     .icon {
@@ -335,7 +334,7 @@
     
     .foo {
         display: flex;
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
         justify-content: space-between;
         align-items: center;
     }
@@ -352,4 +351,228 @@
         display: flex;
         flex-direction: row;
         font-size: 2.1vw;
+    }
+    
+    @media screen and (max-width:768px) {
+        #logo {
+            height: 25px;
+            width: 25px;
+            margin: 10px;
+        }
+        .container {
+            height: 45px;
+            width: 100%;
+            background-color: black;
+            color: white;
+            /* position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 4.5vw;*/
+        }
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            height: 800px;
+            font-size: 21px;
+        }
+        /* * {
+            outline: 1px solid wheat;
+        } */
+        #list {
+            /* margin-right: 1.4vw; */
+            margin-top: 18px;
+            font-size: 14px;
+            list-style-type: none;
+            display: none;
+            margin-left: 11px;
+        }
+        #clientId,
+        #secretId {
+            background-color: white;
+            width: 110px;
+            border: 7px;
+            border-radius: 10px;
+            height: 15px;
+            margin-left: 11px;
+            padding: 7px;
+            font-size: 15px;
+            display: inline-block;
+        }
+        #secretId {
+            margin-top: 50px;
+        }
+        #auth {
+            background-color: #1DB954;
+            color: #1e1616;
+            width: 70px;
+            font-size: 14px;
+            margin-top: 10px;
+            height: 21px;
+            /* margin-top: 25%;
+            margin-left: -16%; */
+        }
+        .form-label {
+            font-size: 14px;
+            padding: 1px;
+            display: inline-block;
+        }
+        .clientId,
+        .secretId {
+            width: 200px;
+            height: 55px;
+        }
+        .search {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            display: inline-block;
+            margin-top: 8px;
+            margin-left: 60%;
+            display: none;
+        }
+        #input {
+            border: 1px solid #d3d3d3;
+            border-radius: 20px;
+            padding: 4px, 0 4px;
+            font-size: 14px;
+            width: 140px;
+            height: 15px;
+            /* margin-right: 1vw; */
+            background-color: rgb(20, 13, 13);
+            color: white;
+        }
+        #search {
+            background-color: #1e1616;
+            border: 1px solid #d3d3d3;
+            border-radius: 0 12px 12px 0;
+            color: #fff;
+            padding: 7px 14px;
+            font-size: 14px;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            top: 8.1px;
+            height: 17px;
+            width: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .icon {
+            display: flex;
+            height: 9px;
+            width: 9px;
+            justify-content: center;
+            align-items: center;
+            /* margin-right: 4px;
+            margin-bottom: 2px; */
+        }
+        label {
+            margin-top: 14px;
+            color: white;
+        }
+        .audio-container {
+            background-color: black;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            height: 55px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: none;
+        }
+        /* Styling the audio player controls */
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 11px;
+        }
+        /* Styling the audio player progress bar */
+        .audio-progress {
+            width: 100%;
+            height: 14px;
+            background-color: #535353;
+            margin-bottom: 11px;
+            display: none;
+        }
+        .audio-progress-bar {
+            height: 100%;
+            background-color: #1DB954;
+        }
+        /* Styling the audio player track information */
+        .audio-track-info {
+            /* margin-top: 0.4vw; */
+            text-align: center;
+        }
+        .audio-track-name {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .audio-artist-name {
+            font-size: 11px;
+        }
+        .btn-prev {
+            margin-right: 12px;
+            border-radius: 14px;
+            height: 25px;
+            width: 25px;
+        }
+        .btn-play {
+            margin-right: 12px;
+            border-radius: 30px;
+            height: 25px;
+            width: 25px;
+            overflow: hidden;
+        }
+        /*     
+        li {
+            margin-bottom: 30px;
+        }
+         */
+        .btn-next {
+            height: 25px;
+            width: 25px;
+            border-radius: 14px;
+        }
+        .next {
+            height: 20px;
+            width: 20px;
+        }
+        .play {
+            height: 20px;
+            width: 20px;
+        }
+        .prev {
+            height: 20px;
+            width: 20px;
+        }
+        #buttons {
+            text-align: right;
+            /* margin-right: 200px; */
+            /* margin-top: 30px; */
+            /* display: none; */
+        }
+        #lists {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            background-color: #282828;
+            /* background-color: white; */
+            margin: 4vw;
+        }
+        #item {
+            display: flex;
+            flex-direction: row;
+            font-size: 2.1vw;
+        }
     }
