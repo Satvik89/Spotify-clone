@@ -23,7 +23,7 @@
     nav ul {
         display: flex;
         list-style-type: none;
-        height: 100vw;
+        height: 4.2vw;
         font-size: 1.4vw;
     }
     
@@ -76,6 +76,10 @@
         left: 50%;
         transform: translate(-50%, -50%);
         /* height: 2vh; */
+    }
+    
+    .bar {
+        display: none;
     }
     
     #auth {
@@ -156,6 +160,7 @@
     label {
         margin-top: 1.2vw;
         color: white;
+        height: 2vw;
     }
     
     .audio-container {
@@ -254,10 +259,17 @@
     
     body {
         background-color: #282828;
-        /* background-color: black; */
+
         font-size: small;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         height: auto;
+    }
+    
+    .song-container {
+        display: flex;
+        flex-direction: row;
+        height: 100vw;
+        width: 100%;
     }
     
     .image {
@@ -265,10 +277,13 @@
         width: 25vw;
         top: 25vw;
         left: 20vw;
-        position: fixed;
+        position: absolute;
         transform: translate(-50%, -50%);
         background-color: white;
+        display: flex;
+        align-items: center;
         display: none;
+        flex-direction: row;
     }
     
     #buttons {
@@ -278,8 +293,8 @@
         /* display: none; */
     }
     
-    #upcoming,
-    #lyrics {
+    #upcoming
+     {
         height: 5vw;
         width: 5vw;
         color: white;
@@ -289,9 +304,10 @@
         font-size: 1vw;
         display: none;
     }
+
+  
     
-    #upcoming:active,
-    #lyrics:active {
+    #upcoming:active{
         box-shadow: 0vw 0vw 2vw 1vw rgba(255, 255, 255, 0.5);
         height: 3vw;
         width: 3vw;
@@ -353,6 +369,38 @@
         font-size: 2.1vw;
     }
     
+    #song-image {
+        height: 25vw;
+        width: 25vw;
+        margin-right: 2vw;
+    }
+    /* .lyrics {
+        display: flex;
+        flex-direction: column;
+    } */
+    
+    #song_lyrics {
+        font-size: 1vw;
+        color: #fff;
+        margin-top: 2vw;
+        width: 25vw;
+        height: 25vw;
+    }
+    
+    .song_lyrics {
+        height: 25vw;
+        width: 25vw;
+        scroll-margin: 1vw;
+        overflow-y: scroll;
+       
+        
+    }
+    
+    #heading {
+        color: #fff;
+        font-size: 2vw;
+    }
+    
     @media screen and (max-width:768px) {
         #logo {
             height: 25px;
@@ -377,9 +425,9 @@
             height: 800px;
             font-size: 21px;
         }
-        * {
+        /* * {
             outline: 1px solid wheat;
-        }
+        } */
         #list {
             /* margin-right: 1.4vw; */
             margin-top: 18px;
@@ -410,6 +458,7 @@
             font-size: 14px;
             margin-top: 10px;
             height: 21px;
+            margin: 10px;
             /* margin-top: 25%;
             margin-left: -16%; */
         }
@@ -417,10 +466,12 @@
             font-size: 14px;
             padding: 1px;
             display: inline-block;
+            width: 75px;
+            margin: 10px;
         }
         .clientId,
         .secretId {
-            width: 200px;
+            width: 240px;
             height: 55px;
         }
         .search {
@@ -463,9 +514,11 @@
         }
         .image {
             top: 25%;
-            left: 43.4%;
+            left: 49.4%;
             height: 250px;
             width: 250px;
+            position: absolute;
+            margin-top: 4%;
         }
         .icon {
             display: flex;
@@ -474,7 +527,7 @@
             justify-content: center;
             align-content: center;
             /* margin-right: 4px;
-            margin-bottom: 2px; */
+            margin-bottom:  2px; */
         }
         label {
             margin-top: 14px;
@@ -589,16 +642,36 @@
             justify-content: center;
             align-content: center;
             color: floralwhite;
-            margin: 20px;
             font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+            margin-left: -20%;
+            margin-bottom: 12px;
         }
         .lyrics {
-            height: 400px;
+            margin-top: 10px;
             width: 300px;
+            height: 350px;
+            overflow: hidden;
         }
-        #lyrics {
+        #song_lyrics {
             font-size: large;
-            /* position: relative; */
-            margin: 10px;
+            /* position: absolute; */
+            color: #fff;
+            /* margin: 10px; */
+            width: 280px;
+            height: 400px;
+        }
+        .song_lyrics {
+            width: 330px;
+            height: 420px;
+            overflow-y: scroll;
+        }
+        #buttons {
+            display: none;
+        }
+        #song-image {
+            margin-bottom: 10px;
+            height: 250px;
+            width: 250px;
         }
     }
