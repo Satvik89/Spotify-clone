@@ -1,6 +1,6 @@
 //Client ID def5ff19fdbc46ab85b683aefc110180
 //Client Secret 88a78da6906347c1984911fb38fe4959
-var redirect_uri = "https://spotify-clone-ochre-two.vercel.app/";
+var redirect_uri = "http://127.0.0.1:5500/index.html";
 var client_id = "def5ff19fdbc46ab85b683aefc110180";
 var client_secret = "88a78da6906347c1984911fb38fe4959";
 var access_token = null;
@@ -27,7 +27,7 @@ const prev = document.querySelector(".btn-prev");
 const logo = document.querySelector("#logo");
 const song_image = document.querySelector("#song-image");
 const lyrics_container = document.querySelector(".lyrics");
-const lyrics = document.querySelector("#lyrics");
+const lyrics = document.querySelector("#song_lyrics");
 
 logo.addEventListener("click", () => {
 
@@ -453,14 +453,16 @@ function music(song_uri, name, artist, id, source, i) {
                 lyric_array += response.lyrics.lines[i].words + "<br>";
             }
             lyrics.innerHTML = lyric_array;
-
-
-
-
+            console.log(lyric_array);
 
         })
         .catch(err => console.error(err));
 
+
+    // fetch('https://spotify81.p.rapidapi.com/track_lyrics?id=7nORGrTd2dDP38JC0YfZ4W', options)
+    //     .then(response => response.json())
+    //     .then(response => console.log(response))
+    //     .catch(err => console.error(err));
 }
 
 
