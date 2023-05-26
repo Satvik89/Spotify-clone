@@ -262,7 +262,8 @@
 
         font-size: small;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        height: auto;
+        height: 20vh;
+  
     }
     
     .song-container {
@@ -270,9 +271,11 @@
         flex-direction: row;
         height: 100vw;
         width: 100%;
+        display: none;
     }
-    
-    .image {
+  
+      
+     .image {
         height: 25vw;
         width: 25vw;
         top: 25vw;
@@ -280,11 +283,15 @@
         position: absolute;
         transform: translate(-50%, -50%);
         background-color: white;
-        display: flex;
-        align-items: center;
+        margin-left: 7vw;
         display: none;
-        flex-direction: row;
-    }
+     
+      
+    }  
+
+  
+        
+    
     
     #buttons {
         text-align: right;
@@ -374,24 +381,28 @@
         width: 25vw;
         margin-right: 2vw;
     }
-    /* .lyrics {
-        display: flex;
-        flex-direction: column;
-    } */
-    
+
+  
     #song_lyrics {
         font-size: 1vw;
         color: #fff;
         margin-top: 2vw;
         width: 25vw;
         height: 25vw;
+       
+    
     }
     
     .song_lyrics {
+        margin: 10vw 10vw 0 20vw;
         height: 25vw;
         width: 25vw;
         scroll-margin: 1vw;
         overflow-y: scroll;
+        left: 35vw;
+        top: -2vw;
+        position: relative;
+        display: none;
        
         
     }
@@ -409,7 +420,7 @@
         }
         .container {
             height: 45px;
-            width: 100%;
+            width: 110%;
             background-color: black;
             color: white;
             /* position: fixed;
@@ -419,6 +430,7 @@
         right: 0;
         bottom: 4.5vw;*/
         }
+       
         nav ul {
             display: flex;
             list-style-type: none;
@@ -662,16 +674,27 @@
             height: 400px;
         }
         .song_lyrics {
-            width: 330px;
+        
+            width: 300px;
             height: 420px;
             overflow-y: scroll;
+            left: 0px;
+            top:258px;
+        }
+        .song-container{
+           top: 400px;
+     
+            height: 800px;
         }
         #buttons {
             display: none;
         }
+      
+        
         #song-image {
             margin-bottom: 10px;
             height: 250px;
             width: 250px;
         }
+        
     }

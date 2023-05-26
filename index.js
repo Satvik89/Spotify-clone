@@ -28,13 +28,75 @@ const next = document.querySelector(".btn-next");
 const prev = document.querySelector(".btn-prev");
 const logo = document.querySelector("#logo");
 const song_image = document.querySelector("#song-image");
-const lyrics_container = document.querySelector(".lyrics");
+const lyrics_container = document.querySelector(".song_lyrics");
 const lyrics = document.querySelector("#song_lyrics");
+const song_container = document.querySelector(".song-container");
+
 
 logo.addEventListener("click", () => {
 
     list.style.display = "block";
     image.style.display = "none";
+    lyrics_container.style.display="none";
+    lyrics.style.display="none";
+
+    for (i = 0; i < 9; i++) {
+        const imgs = document.querySelector(`#images-${i}`);
+        const name = document.querySelector(`#new_name-${i}`);
+        const artist = document.querySelector(`#artist-${i}`);
+
+        imgs.style.height = '10vw';
+        imgs.style.width = '10vw';
+        imgs.style.margin = "2vw";
+        imgs.style.flexBasis = "33%";
+
+
+        const new_div = document.querySelector(`.bu-${i}`);
+        new_div.style.height = "17vw";
+        new_div.style.width = "100%";
+        new_div.style.backgroundColor = "#282828";
+        new_div.style.border = "none";
+        new_div.style.justifyContent = "space-around";
+
+
+        const item = document.querySelector(`#item-${i}`);
+        item.style.fontSize = "0.5vw";
+        item.style.display = "flex";
+        item.style.flexDirection = "column";
+        list.style.display = "flex";
+        list.style.flexWrap = "wrap";
+        list.style.justifyContent = "left";
+        list.style.flexDirection = "row";
+
+        item.style.justifyContent = "center";
+        item.style.display = "flex";
+        item.style.justifyContent = "center";
+        item.style.alignItems = "flex-start";
+        item.style.paddingLeft = "0.7vw";
+        if (window.innerWidth < 768) {
+            new_div.style.height = "170px";
+            item.style.fontSize = "4.1px";
+            item.style.textAlign = "right";
+            item.style.paddingLeft = "3.2px";
+            imgs.style.height = '100px';
+            imgs.style.width = '100px';
+            imgs.style.margin = "20px";
+            imgs.style.objectFit = "cover";
+            name.style.fontSize = "12px";
+            new_div.style.justifyContent = "left";
+            artist.style.fontSize = "7px";
+            list.style.flexDirection = "column";
+            new_div.style.display = "flex";
+            new_div.style.justifyContent = "left";
+            new_div.style.alignItems = "center";
+            new_div.style.outline = "none";
+            imgs.style.margin = "35px";
+
+
+
+        }
+    }
+
 })
 
 function foo() {
@@ -422,6 +484,7 @@ function music(song_uri, name, artist, id, source, i) {
         })
         .then((response) => {
             console.log("Music started playing");
+            console.log(response);
         })
         .catch((error) => {
             console.error("Error starting music playback:", error);
@@ -435,6 +498,9 @@ function music(song_uri, name, artist, id, source, i) {
     list.style.display = "none";
     image.style.display = "block";
     lyrics.style.display = "block";
+    song_container.style.display="block";
+    lyrics_container.style.display="block";
+    
 
     song_image.src = `${y}`
 
@@ -458,7 +524,11 @@ function music(song_uri, name, artist, id, source, i) {
             console.log(lyric_array);
 
         })
-        .catch(err => console.error(err));
+        .catch(err => {console.error(err)
+            lyrics.innerHTML="";
+            lyrics.innerHTML="No Lyrics Found";
+        
+        });
 
 
     // fetch('https://spotify81.p.rapidapi.com/track_lyrics?id=7nORGrTd2dDP38JC0YfZ4W', options)
@@ -532,25 +602,31 @@ function fetchfunction() {
             list.innerHTML = listItems;
             list.style.display = "block";
             image.style.display = "none";
+            lyrics_container.style.display="none";
+            lyrics.style.display="none";
             const a = document.querySelector(".bu-1");
             a.addEventListener("click", () => {
                 console.log("superman");
             })
+            
+           
+           
+            
             prev.addEventListener("click", () => {
                 console.log("clicked");
                 let spotify_uri = localStorage.getItem("spotify_uri");
                 console.log(songs[1]);
-
+                
                 let i = localStorage.getItem("i");
-
                 if (spotify_uri == undefined || i == 0) {
 
                     music(`${songs[9]}`, `${new_name[9]}`, `${new_artist[9]}`, `${id[9]}`, `${source[9]}`, 9);
                 } else {
-                    let z = localStorage.getItem("i");
-                    let x = parseInt(z);
-                    let y = x - 1;
-                    music(`${songs[y]}`, `${ new_name[y]}`, `${ new_artist[y]}`, `${id[y]}`, `${source[y]}`, y);
+                  
+                    let x = parseInt(i);
+                    console.log(x);
+                    x--;
+                    music(`${songs[x]}`, `${ new_name[x]}`, `${ new_artist[x]}`, `${id[x]}`, `${source[x]}`, x);
 
                 }
             })
@@ -559,16 +635,17 @@ function fetchfunction() {
                 let spotify_uri = localStorage.getItem("spotify_uri");
                 console.log(songs[1]);
                 let i = localStorage.getItem("i");
-                console.log(i);
 
+               
                 if (spotify_uri == undefined || i == 9) {
 
                     music(`${songs[0]}`, `${new_name[0]}`, `${new_artist[0]}`, `${id[0]}`, `${source[0]}`, 0);
                 } else {
-                    let z = localStorage.getItem("i");
-                    let x = parseInt(z);
-                    let y = x + 1;
-                    music(`${songs[y]}`, `${ new_name[y]}`, `${ new_artist[y]}`, `${id[y]}`, `${source[y]}`, y);
+                  
+                    let x = parseInt(i);
+                    console.log(x);
+                   x++;
+                    music(`${songs[x]}`, `${ new_name[x]}`, `${ new_artist[x]}`, `${id[x]}`, `${source[x]}`, x);
 
                 }
             })
