@@ -608,6 +608,7 @@ function fetchfunction() {
             a.addEventListener("click", () => {
                 console.log("superman");
             })
+            
            
            
             
